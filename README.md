@@ -12,6 +12,9 @@ let forecastData = {
 new Chartist.Line('#chart1', forecastData, options);
 
 ```
+<img src="/examples/linechart.png">
+
+
 ### Created Bar Chart
 ```
 let forecastData = {
@@ -21,6 +24,9 @@ let forecastData = {
 
 new Chartist.bar('#chart2', forecastData, options);
 ```
+<img src="/examples/barchart.png">
+
+
 ### Used LabelInterpolationFnc to add indicators on chart labels
 
 ```
