@@ -1,6 +1,5 @@
 $(document).ready(function () {
     'use strict';
-    console.log('script.js loaded');
     let timestamps = [];
     let forecastTemps = [];
     $("#create").hide();
@@ -9,23 +8,19 @@ $(document).ready(function () {
     // Weather Lookup and OpenWeather to get json data.
 
     $("#submit").on("click", function () {
-
         let zipcode = $("#zip").val();
         let apiKey = "1facaaab905e18b5369e1dfd1605da85";
         getApiData(zipcode, apiKey);
         $("#create").show();
-
     })
 
     // Click to create charts
-
     $("#create").on("click", function () {
         createCharts();
         $("div h2").show();
     })
 
     function createCharts() {
-
         let options = {
             paddingBottom: 0,
             onlyInteger: true,
@@ -38,13 +33,14 @@ $(document).ready(function () {
             axisY: {
                 // Lets offset the chart a bit from the labels
                 offset: 60,
-                // The label interpolation function enables you to modify the values
-                // used for the labels on each axis. Here we are converting the
-                // values into million pound.
+
+                //  Add in degrees Farenheit
                 labelInterpolationFnc: function (value) {
                     return value + 'ºF';
                 }
             },
+
+            // Show label for every 8 datapoints
             axisX: {
                 labelInterpolationFnc: function skipLabels(value, index) {
 
@@ -53,15 +49,19 @@ $(document).ready(function () {
             }
         };
 
+        // Create Array with labels and series.
+
         let forecastData = {
             labels: timestamps,
             series: [forecastTemps]
         };
 
-
+        // Create Charts
 
         new Chartist.Line('#chart1', forecastData, options);
         new Chartist.Bar('#chart2', forecastData, options);
+
+
     }
 
     function getApiData(zipcode, apiKey) {
@@ -123,13 +123,9 @@ $(document).ready(function () {
         $("#weather-current").children().remove(); // Clear out previous entry for weather
         let html = "";
         html += '<p>' + "Current Temp is " + main.temp + "ºF with " + weather.description + ".</p>";
-        console.log(timestamps);
-        console.log(forecastTemps);
+        //console.log(timestamps);
+        //console.log(forecastTemps);
         return html;
     }
-
-
-
-
 
 });
