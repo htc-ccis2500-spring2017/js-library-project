@@ -9,7 +9,8 @@ $(document).ready(function () {
 
     $("#submit").on("click", function () {
         let zipcode = $("#zip").val();
-        let apiKey = "1facaaab905e18b5369e1dfd1605da85";
+        let apiKey = $("#apikey").val();
+
         getApiData(zipcode, apiKey);
         $("#create").show();
     })
@@ -70,7 +71,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "get",
-            url: "http://api.openweathermap.org/data/2.5/forecast?zip=" + zipcode + ",us&units=Imperial&appid=" + apiKey,
+            url: "//api.openweathermap.org/data/2.5/forecast?zip=" + zipcode + ",us&units=Imperial&appid=" + apiKey,
             dataType: "jsonp",
             contentType: "applications/javascript",
             error: function (xhr, status, error) {
@@ -98,7 +99,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "get",
-            url: "http://api.openweathermap.org/data/2.5/weather?zip=" + zipcode + ",us&units=Imperial&appid=" + apiKey,
+            url: "//api.openweathermap.org/data/2.5/weather?zip=" + zipcode + ",us&units=Imperial&appid=" + apiKey,
             dataType: "jsonp",
             contentType: "applications/javascript",
             error: function (xhr, status, error) {
