@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     $("#submit").on("click", function () {
         let zipcode = $("#zip").val();
-        let apiKey = $("#apikey").val();
+        let apiKey = "ec50a6072ac189dee111acdd3a38ab9f"
 
         getApiData(zipcode, apiKey);
         $("#create").show();
@@ -71,7 +71,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "get",
-            url: "//api.openweathermap.org/data/2.5/forecast?zip=" + zipcode + ",us&units=Imperial&appid=" + apiKey,
+            url: "http://api.openweathermap.org/data/2.5/forecast?zip=" + zipcode + ",us&units=Imperial&APPID=" + apiKey,
             dataType: "jsonp",
             contentType: "applications/javascript",
             error: function (xhr, status, error) {
@@ -94,12 +94,18 @@ $(document).ready(function () {
             },
         });
 
+        let urllocation = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?zip=" + zipcode + ",us&units=Imperial&APPID=" + apiKey;
+
+        $.getJSON(urllocation, function (data2) {
+            console.log(data2);
+        })
+
 
         // Get current weather data
 
         $.ajax({
             type: "get",
-            url: "//api.openweathermap.org/data/2.5/weather?zip=" + zipcode + ",us&units=Imperial&appid=" + apiKey,
+            url: "http://api.openweathermap.org/data/2.5/weather?zip=" + zipcode + ",us&units=Imperial&APPID=" + apiKey,
             dataType: "jsonp",
             contentType: "applications/javascript",
             error: function (xhr, status, error) {
