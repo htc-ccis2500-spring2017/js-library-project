@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     $("#submit").on("click", function () {
         let zipcode = $("#zip").val();
-        let apiKey = "ec50a6072ac189dee111acdd3a38ab9f"
+        let apiKey = $("#apikey").val();
 
         getApiData(zipcode, apiKey);
         $("#create").show();
@@ -69,15 +69,37 @@ $(document).ready(function () {
 
         // Get forcast data
 
-        $.ajax({
-            type: "get",
-            url: "http://api.openweathermap.org/data/2.5/forecast?zip=" + zipcode + ",us&units=Imperial&APPID=" + apiKey,
-            dataType: "jsonp",
-            contentType: "applications/javascript",
-            error: function (xhr, status, error) {
-                alert("Error: " + xhr.status + " - " + error);
-            },
-            success: function (data) {
+        //        $.ajax({
+        //            type: "get",
+        //            url: "http://api.openweathermap.org/data/2.5/forecast?zip=" + zipcode + ",us&units=Imperial&APPID=" + apiKey,
+        //            dataType: "jsonp",
+        //            contentType: "applications/javascript",
+        //            error: function (xhr, status, error) {
+        //                alert("Error: " + xhr.status + " - " + error);
+        //            },
+        //            success: function (data) {
+        //                // Sort out dates and temps
+        //
+        //                // Prevent overlapping data if data is already loaded. 
+        //                if (timestamps.length > 0) {
+        //                    timestamps = [];
+        //                    forecastTemps = [];
+        //                }
+        //
+        //                $.each(data.list, function (index, records) {
+        //                    timestamps.push(records.dt_txt);
+        //                    let mainTemps = records.main;
+        //                    forecastTemps.push(mainTemps.temp);
+        //                })
+        //            },
+        //        });
+
+
+
+        // Get forcast data
+        let urlForecast = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?zip=" + zipcode + ",us&units=Imperial&APPID=" + apiKey;
+        try {
+            $.getJSON(urlForecast, function (data) {
                 // Sort out dates and temps
 
                 // Prevent overlapping data if data is already loaded. 
@@ -91,30 +113,37 @@ $(document).ready(function () {
                     let mainTemps = records.main;
                     forecastTemps.push(mainTemps.temp);
                 })
-            },
-        });
+            });
+        } catch (err) {
+            console.log("Unable to get Weather Forecast Data");
+        };
 
-        let urllocation = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?zip=" + zipcode + ",us&units=Imperial&APPID=" + apiKey;
+        // Get current weather data
+        let urlCurrent = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?zip=" + zipcode + ",us&units=Imperial&APPID=" + apiKey;
+        try {
+            $.getJSON(urlCurrent, function (data) {
+                displayWeather("#weather-current", data.weather, data.main);
+            });
+        } catch (err) {
+            console.log("Unable to get Current Weather Data");
+        };
 
-        $.getJSON(urllocation, function (data2) {
-            console.log(data2);
-        })
 
 
         // Get current weather data
 
-        $.ajax({
-            type: "get",
-            url: "http://api.openweathermap.org/data/2.5/weather?zip=" + zipcode + ",us&units=Imperial&APPID=" + apiKey,
-            dataType: "jsonp",
-            contentType: "applications/javascript",
-            error: function (xhr, status, error) {
-                alert("Error: " + xhr.status + " - " + error);
-            },
-            success: function (data) {
-                displayWeather("#weather-current", data.weather, data.main);
-            },
-        });
+        //        $.ajax({
+        //            type: "get",
+        //            url: "http://api.openweathermap.org/data/2.5/weather?zip=" + zipcode + ",us&units=Imperial&APPID=" + apiKey,
+        //            dataType: "jsonp",
+        //            contentType: "applications/javascript",
+        //            error: function (xhr, status, error) {
+        //                alert("Error: " + xhr.status + " - " + error);
+        //            },
+        //            success: function (data) {
+        //                displayWeather("#weather-current", data.weather, data.main);
+        //            },
+        //        });
 
     }
 
