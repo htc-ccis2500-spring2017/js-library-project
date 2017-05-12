@@ -1,0 +1,30 @@
+/* Use this selector to override the line style on a given series */
+
+.ct-series-a .ct-line {
+    /* Set the colour of this series line */
+    stroke: blue;
+}
+
+
+/* This selector overrides the points style on line charts. Points on line charts are actually just very short strokes. This allows you to customize even the point size in CSS */
+
+.ct-series-a .ct-point {
+    /* Colour of your points */
+    stroke: blue;
+}
+
+.ct-series-a .ct-bar {
+    /* Colour of your bars */
+    stroke: blue;
+}
+
+body {
+    background: #FBFDF4;
+}
+
+.ct-label {
+    fill: rgba(0, 0, 0, 0.4);
+    color: #000000;
+    font-size: 1rem;
+    line-height: 1;
+}
