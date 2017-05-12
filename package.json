@@ -1,0 +1,22 @@
+{
+  "name": "js-library-project",
+  "version": "1.0.0",
+  "description": "Assignment to use a library of my choice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrandonHAnderson/js-library-project.git"
+  },
+  "author": "Brandon H. Anderson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrandonHAnderson/js-library-project/issues"
+  },
+  "homepage": "https://github.com/BrandonHAnderson/js-library-project#readme",
+  "dependencies": {
+    "chartist": "^0.11.0"
+  }
+}
