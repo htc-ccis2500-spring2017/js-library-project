@@ -25,7 +25,7 @@ var JSobject = anime({
 
 ## Motivation
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+Created for Mary Mosman's Javascript class.
 
 ## Installation
 
@@ -34,5 +34,3 @@ All you have to do is open in your favorite internet browser.
 ## Contributors
 
 Created by Parker Smith
-
-## License
