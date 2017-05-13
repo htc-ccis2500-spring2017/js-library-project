@@ -23,6 +23,8 @@ var JSobject = anime({
 
 ```
 
+![Loadingbar.gif](https://pomf.pyonpyon.moe/eezhdr.gif)
+
 ## Motivation
 
 Created for Mary Mosman's Javascript class.
