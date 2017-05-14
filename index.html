@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Library Project</title>
+
+    <script type="text/javascript" src="js/raphael.min.js"></script>
+    <script type="text/javascript" src="js/raphael.icons.min.js"></script>
+    <script type="text/javascript" src="js/wheelnav.min.js"></script>
+
+
+</head>
+
+<body>
+    <header>Example of WheelNav.js library</header>
+
+    <!--MAIN MENU-->
+    <div id='piemenu' data-wheelnav data-wheelnav-slicepath='MenuSlice' data-wheelnav-spreader data-wheelnav-spreaderpath='HolderSpreader' data-wheelnav-navangle='180' data-wheelnav-cssmode data-wheelnav-init>
+        <div data-wheelnav-navitemicon='bolt'></div>
+        <div data-wheelnav-navitemicon='biohazard'></div>
+        <div data-wheelnav-navitemicon='globe'></div>
+        <div data-wheelnav-navitemicon='apple'></div>
+    </div>
+    <div>
+        <ul>
+            <li id="Boltitem">This is my example of something that can be built through the use of the wheelnav.js library. Although this is a simple example there are literally no limits to what can be done with this library. Click on the biohazard icon to continue.</li>
+            <li id="Bioitem">You could use this library to create a unique way to navigate a website or you could even create a form where each "slice" of the pie navigates to a different input portion of the form. Click on the globe.</li>
+            <li id="Globeitem">Another example could be a music player where each slice controls the music in different ways, such as play, fast forward, etc. Apple is better than Android. :-)</li>
+            <li id="Appleitem">The wheel below shows how a marker can indicate which item is selected while the above wheel turns into a cog and the icon color turns to white. The above wheel also has a "spreader" in the center that can be used to collapse and expand the wheel. Give it a try!</li>
+        </ul>
+
+
+    </div>
+
+
+    <!--Star Wheel-->
+    <div id='starmenu' data-wheelnav data-wheelnav-slicepath='StarSlice' data-wheelnav-marker data-wheelnav-markerpath='TriangleMarker' data-wheelnav-rotateoff data-wheelnav-navangle='270' data-wheelnav-cssmode data-wheelnav-init>
+        <div data-wheelnav-navitemtext='0'></div>
+        <div data-wheelnav-navitemtext='1'></div>
+        <div data-wheelnav-navitemtext='2'></div>
+        <div data-wheelnav-navitemtext='3'></div>
+        <div data-wheelnav-navitemtext='4'></div>
+    </div>
+
+
+
+
+</body>
+<footer>
+    Project created by Brandon Narveson through the use of the wheelnav library.
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="js/script.js"></script>
+
+</html>
