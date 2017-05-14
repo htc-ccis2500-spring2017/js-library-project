@@ -5,10 +5,6 @@ $(function () {
     $("#Appleitem").hide();
 
 
-
-
-    //This is the place for code snippets from the documentation -> http://wheelnavjs.softwaretailoring.net/documentation.html
-
     //creates and customizes the first wheel
     let piemenu = new wheelnav("piemenu");
     piemenu.animatetime = 1000;
@@ -58,7 +54,6 @@ $(function () {
         $("#Boltitem").hide();
     };
 
-    //Insert generated JavaScript code from here -> http://pmg.softwaretailoring.net
 
     ///BOLT MENU
     let starmenu = new wheelnav('starmenu');
