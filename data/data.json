@@ -1,16 +1,16 @@
 {
 	"videogames": [{
 		"name": "Game Maker Engine",
-		"image": "GMLcode.jpg",
+		"image": "GMLcode.JPG",
 		"description": "Game Maker Studio let's developers use code or a drag and drop system. While I have played a little with the drag and drop (DnD), using code is much more efficient. You can write scripts and macros for everything, which makes it more streamlined when creating objects to put into the game. "
 	}, {
 		"name": "Room Creation",
-		"image": "gameroom.jpg",
+		"image": "gameroom.JPG",
 		"description": "Levels consists of rooms, that have objects placed into them. "
 
 	}, {
 		"name": "Image Editor - Sprites",
-		"image": "ImageEdit.jpg",
+		"image": "ImageEdit.JPG",
 		"description": "There is an in-game image editor that is pretty good for either creating animations for your objects."
 
 	}]
